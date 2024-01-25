@@ -1,0 +1,108 @@
+$dark-color: #2b1a24;
+$layer-2-color: #672c44;
+$layer-3-color: #ad3059;
+$layer-4-color: #fd4e4d;
+$layer-6-color: #ff8a00;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#mountains {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $layer-6-color;
+  overflow: hidden;
+
+  .mountain-1,
+  .mountain-2,
+  .mountain-3,
+  .mountain-4,
+  .mountain-5,
+  .mountain-6 {
+    position: absolute;
+    width: 200vw;
+    height: 100vh;
+    top: 0;
+    left: -50vw;
+    background: url(../assets/layer1.svg) repeat-x bottom;
+    background-size: 1000px auto;
+  }
+  .mountain-1::after {
+    content: "";
+    width: 200vw;
+    height: 150px;
+    background: $dark-color;
+    display: block;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+  }
+  .mountain-2 {
+    background-image: url("../assets/layer2.svg");
+    &::after {
+      content: "";
+      width: 200vw;
+      height: 250px;
+      background: $layer-2-color;
+      display: block;
+      position: absolute;
+      bottom: -200px;
+      left: 0;
+    }
+  }
+  .mountain-3 {
+    background-image: url("../assets/layer3.svg");
+  }
+  .mountain-4 {
+    background-image: url("../assets/layer4.svg");
+  }
+  .mountain-5 {
+    background-image: url("../assets/layer5.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .mountain-6 {
+    background-image: url("../assets/layer6.svg");
+  }
+
+  .heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .heading-inner {
+      margin-top: -40vh;
+      h1 {
+        font-size: 4rem;
+        font-family: "Courier New", Courier, monospace;
+        text-shadow: 2px 2px 5px $layer-2-color;
+        color: $dark-color;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.info {
+  width: 100vw;
+  height: 100vh;
+  background: $dark-color;
+  padding: 5vw;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: wheat;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
